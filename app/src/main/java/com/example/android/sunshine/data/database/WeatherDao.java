@@ -1,5 +1,6 @@
 package com.example.android.sunshine.data.database;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -11,7 +12,7 @@ import java.util.Date;
 public interface WeatherDao {
 
     @Query("SELECT * FROM weather WHERE date = :date")
-    WeatherEntry getWeatherByDate(Date date);
+    LiveData<WeatherEntry> getWeatherByDate(Date date);
 
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     void bulkInsert(WeatherEntry... weather) ;
