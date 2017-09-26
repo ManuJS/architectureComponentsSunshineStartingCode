@@ -29,7 +29,7 @@ import java.util.Date;
  */
 class DetailActivityViewModel extends ViewModel {
 
-    // Weather forecast the user is looking at
+    //  Previsão do tempo que o usuário está olhando 
     private final LiveData<WeatherEntry> mWeather;
 
     // Date for the weather forecast
